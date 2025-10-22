@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  padding: 20px;
+  padding: 20px 5vw;
 }
 
 .title {
@@ -22,6 +22,7 @@ body {
   color: #a3eaff;
   text-shadow: 0 0 10px #00feba;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .card {
@@ -38,7 +39,9 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.03);
+  @media (hover: hover) {
+    transform: scale(1.03);
+  }
 }
 
 .search {
@@ -57,6 +60,7 @@ body {
   outline: none;
   font-size: 16px;
   color: #333;
+  font-size: 16px; 
 }
 
 .search button {
@@ -64,18 +68,21 @@ body {
   outline: none;
   width: 55px;
   height: 55px;
+  flex-shrink: 0; 
   border-radius: 50%;
   background: #00feba;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .search button:hover {
-  transform: scale(1.1);
-  background: #00c9a7;
+  @media (hover: hover) {
+    transform: scale(1.1);
+    background: #00c9a7;
+  }
 }
 
 .search button img {
@@ -85,6 +92,7 @@ body {
 .weather-icon {
   width: 120px;
   margin: 20px 0;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
 }
 
 .temp {
@@ -95,6 +103,7 @@ body {
 .city {
   font-size: 35px;
   margin-top: -5px;
+  word-wrap: break-word;
 }
 
 .date-time {
@@ -106,13 +115,19 @@ body {
 .details {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 30px;
+  flex-wrap: wrap; 
+  gap: 15px;
 }
 
 .col {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-basis: 150px;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .col img {
@@ -140,3 +155,64 @@ body {
   display: none;
   animation: fadeIn 0.6s ease-in-out;
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .card {
+    margin-top: 30px;
+    padding: 25px 20px;
+  }
+
+  .search input {
+    height: 45px;
+    padding: 0 15px;
+    font-size: 15px;
+  }
+
+  .search button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .search button img {
+    width: 18px; 
+  }
+
+  .weather-icon {
+    width: 100px;
+  }
+
+  .temp {
+    font-size: 55px;
+  }
+
+  .city {
+    font-size: 30px;
+  }
+
+  .date-time {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .col {
+    width: 100%;
+    justify-content: center;
+    flex-basis: auto;
+  }
+
+  .humidity, .wind {
+    font-size: 20px;
+  }
+}
+
