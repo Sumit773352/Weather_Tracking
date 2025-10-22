@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 30px;
+  color: #a3eaff;
+  text-shadow: 0 0 10px #00feba;
+  letter-spacing: 1px;
+}
+
+.card {
+  width: 90%;
+  max-width: 450px;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 35px 30px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.search input {
+  flex: 1;
+  height: 50px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.search button {
+  border: none;
+  outline: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #00feba;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.search button:hover {
+  transform: scale(1.1);
+  background: #00c9a7;
+}
+
+.search button img {
+  width: 20px;
+}
+
+.weather-icon {
+  width: 120px;
+  margin: 20px 0;
+}
+
+.temp {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.city {
+  font-size: 35px;
+  margin-top: -5px;
+}
+
+.date-time {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.col img {
+  width: 40px;
+}
+
+.humidity, .wind {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.error {
+  display: none;
+  color: #ff7070;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.weather {
+  display: none;
+  animation: fadeIn 0.6s ease-in-out;
+}
